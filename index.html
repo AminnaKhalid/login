@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+
+<body
+    class="flex flex-col justify-center items-center min-h-screen bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-400 to-gray-900">
+    <div>
+        <!-- heading of the page -->
+        <h1
+            class="text-4xl font-bold bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r bg-clip-text text-transparent">
+            LOGIN TO OUR COMMUNITY </h1>
+    </div>
+    <!-- login and signup button inside the div -->
+    <div>
+        <button id="openModal"
+            class="bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-white px-4 py-2 rounded shadow-lg shadow-gray-300">Login</button>
+        <button id="openmodal2"
+            class="bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r  text-white px-4 py-2 m-4 rounded shadow-lg shadow-gray-300">
+            Sign
+            Up</button>
+    </div>
+    <!-- modal that appers after clicking the button -->
+    <div id="modal" class="hidden fixed  bg-black bg-opacity-50 ">
+        <div class="flex items-center justify-center">
+            <div class="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 p-8 rounded shadow-md w-96">
+                <button id="closeModal" class="absolute top-4 right-4 text-black hover:text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div class="flex items-center justify-center p-3">
+                    <img src="./src/image/dp1.avif" alt=""
+                        class="object-cover object-center rounded-full border w-32 h-32 ring-2 ring-gray-800">
+                </div>
+                <!-- form inside the modal -->
+                <form class="mt-4">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-semibold">Name</label>
+                        <input type="text" id="name" name="name"
+                            class="w-full px-4 py-2 rounded border focus:ring focus:ring-blue-300" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-700 font-semibold">Password</label>
+                        <input type="password" id="password" name="password"
+                            class="w-full px-4 py-2 rounded border focus:ring focus:ring-blue-300" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="block text-gray-700 font-semibold">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            class="w-full px-4 py-2 rounded border focus:ring focus:ring-blue-300" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="flex items-center my-2">
+                            <input type="checkbox" id="remember-me"
+                                class="mr-2 default:ring-2 placeholder-shown:border-gray-500  required:border-red-500"
+                                required>
+                            <span>Remember Me</span>
+
+                        </div>
+                    </div>
+                    <!-- modal that appers after clicking the submit button -->
+                    <div id="notification"
+                        class="hidden fixed inset-0 h-12 w-72  bg-black bg-opacity-80 text-white rounded p-2 font-bold m-6">
+                        Form is submitted successfully !!!
+                    </div>
+                    <!-- buttons inside the modal form -->
+                    <div class="flex justify-end mt-4 space-x-4">
+                        <button type="submit"
+                            class="bg-gradient-to-r from-gray-700 via-gray-800 to-blue-800 text-white px-4 py-2 rounded">Submmit</button>
+                        <button type="button" id="cancelButton"
+                            class="bg-gradient-to-r from-gray-700 via-gray-800 to-blue-800  text-white px-4 py-2 rounded">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal_2" class="hidden fixed  bg-black bg-opacity-50 ">
+        <div class="flex items-center justify-center">
+            <div class="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 p-8 rounded shadow-md w-96">
+                <button id="closeModal2" class="absolute top-4 right-4 text-black hover:text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div class="flex items-center justify-center text-2xl font-bold">
+                    SIGN UP
+                </div>
+                <!-- form inside the modal -->
+                <form class="mt-4">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-semibold">Name</label>
+                        <input type="text" id="name" name="name"
+                            class="w-full px-4 py-2 rounded border focus:ring focus:ring-blue-300" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold">Email
+                        </label>
+                        <input type="email" id="email" name="email"
+                            class="w-full px-4 py-2 rounded border focus:ring focus:ring-blue-300" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-700 font-semibold">Password</label>
+                        <input type="password" id="password" name="password"
+                            class="w-full px-4 py-2 rounded border focus:ring focus:ring-blue-300" required>
+                    </div>
+
+                    <!-- modal that appers after clicking the submit button -->
+                    <div id="notification"
+                        class="hidden fixed inset-0 h-12 w-72  bg-black bg-opacity-80 text-white rounded p-2 font-bold m-6">
+                        Form is submitted successfully !!!
+                    </div>
+                    <!-- buttons inside the modal form -->
+                    <div class="flex justify-end mt-4 space-x-4">
+                        <button type="submit"
+                            class="bg-gradient-to-r from-gray-700 via-gray-800 to-blue-800 text-white px-4 py-2 rounded">Submmit</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // initializing the constants
+
+        const modal = document.getElementById('modal');
+        const Modal = document.getElementById('modal_2');
+        const openmodalbutton = document.getElementById('openModal');
+        const openmodal2 = document.getElementById('openmodal2')
+        const closemodalbutton = document.getElementById('closeModal');
+        const closemodal2 = document.getElementById('closeModal2');
+        const cancelButton = document.getElementById('cancelButton');
+        // open modal and removes the hidden class
+        openmodalbutton.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+        // open modal for signup
+
+        openmodal2.addEventListener('click', (e) => {
+            Modal.classList.remove('hidden');
+        });
+
+        // close the modal and add the hidden class
+        closemodalbutton.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+        // close modal for sign up 
+        closemodal2.addEventListener('click', (e) => {
+            Modal.classList.add('hidden');
+        });
+
+        // cancel button that applies hidden class
+        cancelButton.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        // initailizing the constant for submit button
+
+        const notification = document.getElementById('notification');
+        const submitbutton = document.querySelector('button[type="submit"]');
+
+        submitbutton.addEventListener('click', (e) => {
+            event.preventDefault();
+            notification.classList.remove('hidden');
+
+
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 2000);
+
+        })
+    </script>
+</body>
+
+</html>
